@@ -11,7 +11,9 @@
 #define QEMU_WARN_UNUSED_RESULT
 #endif
 
-#define QEMU_BUILD_BUG_ON(x) typedef char __build_bug_on__##__LINE__[(x)?-1:1];
+#define QEMU_BUILD_BUG_ON(x) typedef char __build_bug_on__##__LINE__[(x)?-1:1] 
+//Why we were using that find out right now just dont do anything here
+//char __build_bug_on__##__LINE__[(x)?-1:1];
 #define TFR(expr) do { if ((expr) != -1) break; } while (errno == EINTR)
 
 typedef struct QEMUTimer QEMUTimer;
